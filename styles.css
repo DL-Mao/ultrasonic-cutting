@@ -1,0 +1,1057 @@
+/* 重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航栏 */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 导航栏隐藏状态 */
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+/* 导航栏显示状态 */
+.navbar.visible {
+    transform: translateY(0);
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: -1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    padding: 10px 0;
+}
+
+.nav-link:hover {
+    color: #000;
+}
+
+/* 下拉菜单 */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    min-width: 600px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* 下拉菜单网格布局 */
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.dropdown-item {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f8f9fa;
+}
+
+.dropdown-item:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-image {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.dropdown-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-item:hover .dropdown-image img {
+    transform: scale(1.05);
+}
+
+.dropdown-text {
+    padding: 12px;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+.dropdown-text span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    display: block;
+}
+
+/* 汉堡菜单（移动端） */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* 主要内容 */
+main {
+    margin-top: 70px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('image/show.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.hero-content {
+    flex: 1;
+    padding: 0 40px;
+    color: white;
+    z-index: 3;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    position: relative;
+}
+
+.product-showcase {
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
+
+.product-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.product-item.active {
+    opacity: 1;
+}
+
+.product-visual {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.product-visual::before {
+    content: '🔪';
+    font-size: 80px;
+    opacity: 0.8;
+}
+
+/* 按钮样式 */
+.btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #333;
+}
+
+.btn-primary:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: #333;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #333;
+    border: 2px solid #333;
+}
+
+.btn-outline:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* 产品展示区域 - 特斯拉风格 */
+.products-main-section {
+    background: #f8f9fa;
+}
+
+.products-main-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 20px 60px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #333;
+    letter-spacing: -1px;
+}
+
+/* 产品展示section */
+.product-showcase-section {
+    position: relative;
+    padding: 40px 0;
+    background: white;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.product-showcase-section:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.product-showcase-layout {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 40px;
+    align-items: center;
+    min-height: auto;
+}
+
+/* 媒体在右侧的布局 */
+.product-showcase--media-right .product-showcase-layout {
+    grid-template-areas: "text media";
+}
+
+/* 媒体在左侧的布局 */
+.product-showcase--media-left .product-showcase-layout {
+    grid-template-areas: "media text";
+    grid-template-columns: 55% 45%;
+}
+
+/* 文字内容区域 */
+.product-showcase-text {
+    grid-area: text;
+    padding: 80px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-text-content {
+    max-width: 500px;
+}
+
+.product-text-content h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+    letter-spacing: -1px;
+}
+
+.product-text-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* 特性列表 */
+.product-features-list {
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.feature-item::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #27ae60;
+    border-radius: 50%;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+/* 按钮组 */
+.product-showcase-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* 媒体内容区域 */
+.product-showcase-media {
+    grid-area: media;
+    height: 60vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-media-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 产品占位符样式更新 */
+.product-media-container .product-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-height: 500px;
+}
+
+/* 产品实际动画背景 */
+.kitchen-knife-media .product-placeholder {
+    background-image: url('image/超声波厨刀.gif');
+    max-width: 1500px;
+    aspect-ratio: 4/3;
+    margin: 0 auto;
+}
+
+.bread-knife-media .product-placeholder {
+    background-image: url('image/超声波面包刀.gif');
+    max-width: 1500px;
+    aspect-ratio: 4/3;
+    margin: 0 auto;
+}
+
+.plastic-knife-media .product-placeholder {
+    background-image: url('image/超声波塑料刀.gif');
+    max-width: 1500px;
+    aspect-ratio: 4/3;
+    margin: 0 auto;
+}
+
+/* 图标隐藏，显示实际产品动画 */
+.kitchen-knife-bg::before,
+.bread-knife-bg::before,
+.plastic-knife-bg::before {
+    display: none;
+}
+
+/* Our Story Section */
+.story-section {
+    padding: 120px 0;
+    background: white;
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.story-text h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+    letter-spacing: -1px;
+}
+
+.story-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.story-image {
+    height: 400px;
+}
+
+.story-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 60px;
+}
+
+.story-placeholder::before {
+    content: '📖';
+}
+
+/* Wholesale Section */
+.wholesale-section {
+    padding: 120px 0;
+    background: #f8f9fa;
+}
+
+.wholesale-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.wholesale-info h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.wholesale-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.wholesale-benefits {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.wholesale-benefits li {
+    padding: 10px 0;
+    color: #333;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 30px;
+}
+
+.wholesale-benefits li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.wholesale-image {
+    height: 400px;
+}
+
+.wholesale-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 60px;
+}
+
+.wholesale-placeholder::before {
+    content: '🤝';
+}
+
+/* Blog Section */
+.blog-section {
+    padding: 120px 0;
+    background: white;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 280px;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.blog-image {
+    height: 200px;
+}
+
+.blog-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+}
+
+.blog-placeholder::before {
+    content: '📰';
+}
+
+.blog-content {
+    padding: 25px;
+}
+
+.blog-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.blog-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.blog-date {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-section p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    color: #ccc;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .story-content,
+    .wholesale-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .products-main-section .container {
+        max-width: 800px;
+        padding: 80px 20px 40px;
+    }
+    
+    .product-showcase-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "text"
+            "media";
+        gap: 30px;
+    }
+    
+    .product-showcase-text {
+        padding: 60px 40px;
+    }
+    
+    .product-text-content h3 {
+        font-size: 2.2rem;
+    }
+    
+    .product-showcase-media {
+        height: 50vh;
+    }
+    
+    .product-media-container {
+        max-width: 600px;
+    }
+    .kitchen-knife-media .product-placeholder,
+    .bread-knife-media .product-placeholder,
+    .plastic-knife-media .product-placeholder {
+        max-width: 100%;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 20px 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-item {
+        margin: 15px 0;
+    }
+    
+    /* 移动端下拉菜单样式 */
+    .dropdown-content {
+        position: static;
+        transform: none;
+        min-width: auto;
+        width: 100%;
+        margin-top: 10px;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 10px;
+        background: #f8f9fa;
+    }
+    
+    .dropdown-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .dropdown-item {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .dropdown-image {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+        margin-right: 15px;
+    }
+    
+    .dropdown-text {
+        padding: 0;
+        text-align: left;
+        background: transparent;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    .hero::before {
+        background-attachment: scroll;
+        background-size: cover;
+    }
+    
+    .hero-content {
+        padding: 0 20px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .product-showcase {
+        width: 300px;
+        height: 300px;
+        margin-top: 40px;
+    }
+    
+    .products-main-section .container {
+        max-width: 600px;
+        padding: 60px 15px 30px;
+    }
+    
+    .product-showcase-text {
+        padding: 60px 30px;
+    }
+    
+    .product-text-content h3 {
+        font-size: 2rem;
+    }
+    
+    .product-text-content p {
+        font-size: 1.1rem;
+    }
+    
+    .product-showcase-media {
+        height: 45vh;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .story-text h2,
+    .wholesale-info h3 {
+        font-size: 2rem;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .product-media-container {
+        max-width: 500px;
+    }
+    .kitchen-knife-media .product-placeholder,
+    .bread-knife-media .product-placeholder,
+    .plastic-knife-media .product-placeholder {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+    
+        .product-showcase {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .products-main-section .container {
+        max-width: 100%;
+        padding: 40px 15px 20px;
+    }
+    
+    .product-showcase-text {
+        padding: 40px 20px;
+    }
+    
+    .product-text-content {
+        max-width: 100%;
+    }
+    
+    .product-text-content h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .product-text-content p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .product-features-list {
+        margin-bottom: 30px;
+    }
+    
+    .feature-item {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .product-showcase-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .product-showcase-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .product-showcase-media {
+        height: 40vh;
+    }
+    
+    .product-media-container {
+        max-width: 100%;
+    }
+    .kitchen-knife-media .product-placeholder,
+    .bread-knife-media .product-placeholder,
+    .plastic-knife-media .product-placeholder {
+        max-height: 250px;
+    }
+    
+    .story-text h2,
+    .wholesale-info h3 {
+        font-size: 1.8rem;
+    }
+    
+    .blog-card {
+        min-width: 250px;
+    }
+} 
