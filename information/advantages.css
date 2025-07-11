@@ -1,0 +1,119 @@
+/* 英雄区域样式 */
+.advantages-hero {
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    color: white;
+    padding: 100px 0 60px;
+    text-align: center;
+}
+
+.advantages-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.advantages-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* 内容区域样式 */
+.advantages-content {
+    padding: 60px 0;
+}
+
+.article {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.article-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.article-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* 优势卡片网格 */
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.advantage-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+}
+
+.advantage-card h3 {
+    color: #1a237e;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.advantage-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 结论部分样式 */
+.article-conclusion {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.article-conclusion h2 {
+    color: #1a237e;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.article-conclusion p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .advantages-hero {
+        padding: 80px 0 40px;
+    }
+
+    .advantages-hero h1 {
+        font-size: 2rem;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-conclusion {
+        margin-top: 40px;
+        padding: 30px;
+    }
+}
+
+/* 容器样式 */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+} 

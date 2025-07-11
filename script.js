@@ -22,10 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // 平滑滚动到目标部分
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
             
-            if (targetId.startsWith('#')) {
+            // 只处理页面内的锚点链接
+            if (targetId && targetId.startsWith('#')) {
+                e.preventDefault();
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     const headerOffset = 80;

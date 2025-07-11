@@ -1,0 +1,186 @@
+/* 英雄区域样式 */
+.article-hero {
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    color: white;
+    padding: 100px 0 60px;
+    text-align: center;
+}
+
+.article-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.article-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* 内容区域样式 */
+.article-content {
+    padding: 60px 0;
+}
+
+.article {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.article-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.article-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* 特性卡片网格 */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: #1a237e;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.feature-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 工业应用卡片 */
+.industry-applications {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.application-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    border-left: 4px solid #1a237e;
+    transition: transform 0.3s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-5px);
+}
+
+.application-card h3 {
+    color: #1a237e;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.application-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 技术优势列表 */
+.technology-benefits {
+    background: #f5f5f5;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.technology-benefits h2 {
+    color: #1a237e;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.technology-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.technology-benefits li {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.technology-benefits li:last-child {
+    border-bottom: none;
+}
+
+/* 结论部分样式 */
+.article-conclusion {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.article-conclusion h2 {
+    color: #1a237e;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.article-conclusion p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .article-hero {
+        padding: 80px 0 40px;
+    }
+
+    .article-hero h1 {
+        font-size: 2rem;
+    }
+
+    .feature-grid,
+    .industry-applications {
+        grid-template-columns: 1fr;
+    }
+
+    .article-conclusion {
+        margin-top: 40px;
+        padding: 30px;
+    }
+
+    .technology-benefits {
+        padding: 30px;
+    }
+}
+
+/* 容器样式 */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+} 

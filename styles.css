@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+/* 移除按钮链接的下划线 */
+a.btn {
+    text-decoration: none;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
@@ -249,128 +254,27 @@ main {
     flex-wrap: wrap;
 }
 
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 3;
-    position: relative;
-}
-
-.product-showcase {
-    width: 400px;
-    height: 400px;
-    position: relative;
-}
-
-.product-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.product-item.active {
-    opacity: 1;
-}
-
-.product-visual {
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.product-visual::before {
-    content: '🔪';
-    font-size: 80px;
-    opacity: 0.8;
-}
-
-/* 按钮样式 */
-.btn {
-    padding: 14px 28px;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    letter-spacing: 0.5px;
-}
-
-.btn-primary {
-    background: #fff;
-    color: #333;
-}
-
-.btn-primary:hover {
-    background: #f0f0f0;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-}
-
-.btn-secondary:hover {
-    background: #fff;
-    color: #333;
-}
-
-.btn-outline {
-    background: transparent;
-    color: #333;
-    border: 2px solid #333;
-}
-
-.btn-outline:hover {
-    background: #333;
-    color: #fff;
-}
-
-/* 产品展示区域 - 特斯拉风格 */
+/* 产品展示区域 */
 .products-main-section {
-    background: #f8f9fa;
+    padding: 100px 0;
 }
 
 .products-main-section .container {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 100px 20px 60px;
+    padding: 0 30px;
 }
 
 .section-title {
-    text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 0;
+    text-align: center;
+    margin-bottom: 60px;
     color: #333;
-    letter-spacing: -1px;
 }
 
-/* 产品展示section */
 .product-showcase-section {
-    position: relative;
-    padding: 40px 0;
-    background: white;
-    margin-bottom: 0;
-    overflow: hidden;
+    padding: 80px 0;
 }
 
 .product-showcase-section:nth-child(even) {
@@ -379,134 +283,112 @@ main {
 
 .product-showcase-layout {
     display: grid;
-    grid-template-columns: 45% 55%;
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
     align-items: center;
-    min-height: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
 }
 
-/* 媒体在右侧的布局 */
 .product-showcase--media-right .product-showcase-layout {
-    grid-template-areas: "text media";
+    grid-template-columns: 1fr 1fr;
 }
 
-/* 媒体在左侧的布局 */
 .product-showcase--media-left .product-showcase-layout {
-    grid-template-areas: "media text";
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 1fr 1fr;
+    direction: rtl;
 }
 
-/* 文字内容区域 */
 .product-showcase-text {
-    grid-area: text;
-    padding: 80px 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    direction: ltr;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .product-text-content {
-    max-width: 500px;
+    padding: 20px;
 }
 
 .product-text-content h3 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    line-height: 1.2;
     color: #333;
-    letter-spacing: -1px;
 }
 
 .product-text-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.8;
     color: #666;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-/* 特性列表 */
 .product-features-list {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .feature-item {
     font-size: 1.1rem;
     color: #333;
-    margin-bottom: 12px;
-    font-weight: 500;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .feature-item::before {
     content: '';
     display: inline-block;
-    width: 6px;
-    height: 6px;
-    background: #27ae60;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    background-color: #4CAF50;
     border-radius: 50%;
-    margin-right: 15px;
-    vertical-align: middle;
+    flex-shrink: 0;
 }
 
-/* 按钮组 */
 .product-showcase-buttons {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
-/* 媒体内容区域 */
 .product-showcase-media {
-    grid-area: media;
-    height: 60vh;
+    direction: ltr;
     position: relative;
-    overflow: hidden;
 }
 
 .product-media-container {
-    width: 100%;
-    height: 100%;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 75%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* 产品占位符样式更新 */
 .product-media-container .product-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    max-height: 500px;
 }
 
-/* 产品实际动画背景 */
 .kitchen-knife-media .product-placeholder {
     background-image: url('image/超声波厨刀.gif');
-    max-width: 1500px;
-    aspect-ratio: 4/3;
-    margin: 0 auto;
 }
 
 .bread-knife-media .product-placeholder {
     background-image: url('image/超声波面包刀.gif');
-    max-width: 1500px;
-    aspect-ratio: 4/3;
-    margin: 0 auto;
 }
 
 .plastic-knife-media .product-placeholder {
     background-image: url('image/超声波塑料刀.gif');
-    max-width: 1500px;
-    aspect-ratio: 4/3;
-    margin: 0 auto;
 }
 
 /* 图标隐藏，显示实际产品动画 */
@@ -753,218 +635,91 @@ main {
 /* 响应式设计 */
 @media (max-width: 1024px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.3rem;
     }
-    
-    .story-content,
-    .wholesale-content {
+
+    .products-main-section .container {
+        padding: 0 20px;
+    }
+
+    .product-showcase-layout {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
-    .section-title {
-        font-size: 2.5rem;
-    }
-    
-    .blog-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-    
-    .products-main-section .container {
-        max-width: 800px;
-        padding: 80px 20px 40px;
-    }
-    
-    .product-showcase-layout {
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "text"
-            "media";
-        gap: 30px;
-    }
-    
+
     .product-showcase-text {
-        padding: 60px 40px;
-    }
-    
-    .product-text-content h3 {
-        font-size: 2.2rem;
-    }
-    
-    .product-showcase-media {
-        height: 50vh;
-    }
-    
-    .product-media-container {
-        max-width: 600px;
-    }
-    .kitchen-knife-media .product-placeholder,
-    .bread-knife-media .product-placeholder,
-    .plastic-knife-media .product-placeholder {
         max-width: 100%;
-        max-height: 400px;
+    }
+
+    .product-text-content h3 {
+        font-size: 2rem;
+    }
+
+    .product-showcase-media {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .product-media-container {
+        padding-bottom: 60%;
     }
 }
 
 @media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: white;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 20px 0;
-    }
-    
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    .nav-item {
-        margin: 15px 0;
-    }
-    
-    /* 移动端下拉菜单样式 */
-    .dropdown-content {
-        position: static;
-        transform: none;
-        min-width: auto;
-        width: 100%;
-        margin-top: 10px;
-        box-shadow: none;
-        border-radius: 0;
-        padding: 10px;
-        background: #f8f9fa;
-    }
-    
-    .dropdown-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    
-    .dropdown-item {
-        flex-direction: row;
-        align-items: center;
-        padding: 10px;
-    }
-    
-    .dropdown-image {
-        width: 60px;
-        height: 60px;
-        flex-shrink: 0;
-        margin-right: 15px;
-    }
-    
-    .dropdown-text {
-        padding: 0;
-        text-align: left;
-        background: transparent;
-    }
-    
-    .hamburger {
-        display: flex;
-    }
-    
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-    
     .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
+        min-height: 80vh;
     }
-    
+
     .hero::before {
-        background-attachment: scroll;
-        background-size: cover;
+        background-position: center right;
     }
-    
+
     .hero-content {
         padding: 0 20px;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .product-showcase {
-        width: 300px;
-        height: 300px;
-        margin-top: 40px;
-    }
-    
-    .products-main-section .container {
-        max-width: 600px;
-        padding: 60px 15px 30px;
-    }
-    
-    .product-showcase-text {
-        padding: 60px 30px;
-    }
-    
-    .product-text-content h3 {
-        font-size: 2rem;
-    }
-    
-    .product-text-content p {
         font-size: 1.1rem;
     }
-    
-    .product-showcase-media {
-        height: 45vh;
+
+    .products-main-section .container {
+        padding: 0 15px;
     }
-    
+
+    .product-showcase-text {
+        padding: 0;
+    }
+
+    .product-text-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .product-text-content p {
+        font-size: 1rem;
+    }
+
     .section-title {
         font-size: 2rem;
     }
-    
-    .story-text h2,
-    .wholesale-info h3 {
-        font-size: 2rem;
-    }
-    
-    .blog-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
+
     .container {
         padding: 0 15px;
     }
-    
+
     .hero-buttons {
-        justify-content: center;
+        flex-direction: column;
     }
-    
+
     .product-media-container {
-        max-width: 500px;
-    }
-    .kitchen-knife-media .product-placeholder,
-    .bread-knife-media .product-placeholder,
-    .plastic-knife-media .product-placeholder {
-        max-height: 350px;
+        padding-bottom: 75%;
     }
 }
 
@@ -972,86 +727,64 @@ main {
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1rem;
     }
-    
+
     .section-title {
         font-size: 1.8rem;
     }
-    
+
     .btn {
-        padding: 12px 24px;
-        font-size: 14px;
-    }
-    
-        .product-showcase {
-        width: 250px;
-        height: 250px;
-    }
-    
-    .products-main-section .container {
-        max-width: 100%;
-        padding: 40px 15px 20px;
-    }
-    
-    .product-showcase-text {
-        padding: 40px 20px;
-    }
-    
-    .product-text-content {
-        max-width: 100%;
-    }
-    
-    .product-text-content h3 {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-    }
-    
-    .product-text-content p {
-        font-size: 1rem;
-        margin-bottom: 30px;
-    }
-    
-    .product-features-list {
-        margin-bottom: 30px;
-    }
-    
-    .feature-item {
-        font-size: 1rem;
-        margin-bottom: 10px;
-    }
-    
-    .product-showcase-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .product-showcase-buttons .btn {
         width: 100%;
+    }
+
+    .product-showcase {
+        padding: 40px 0;
+    }
+
+    .products-main-section .container {
+        padding: 0 10px;
+    }
+
+    .product-showcase-text {
         text-align: center;
     }
-    
+
+    .product-text-content {
+        padding: 10px;
+    }
+
+    .product-text-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .product-text-content p {
+        font-size: 0.9rem;
+    }
+
+    .product-features-list {
+        text-align: left;
+    }
+
+    .feature-item {
+        font-size: 0.9rem;
+    }
+
+    .product-showcase-buttons {
+        flex-direction: column;
+    }
+
+    .product-showcase-buttons .btn {
+        width: 100%;
+    }
+
     .product-showcase-media {
-        height: 40vh;
+        margin: 0 -10px;
     }
-    
+
     .product-media-container {
-        max-width: 100%;
-    }
-    .kitchen-knife-media .product-placeholder,
-    .bread-knife-media .product-placeholder,
-    .plastic-knife-media .product-placeholder {
-        max-height: 250px;
-    }
-    
-    .story-text h2,
-    .wholesale-info h3 {
-        font-size: 1.8rem;
-    }
-    
-    .blog-card {
-        min-width: 250px;
+        border-radius: 0;
     }
 } 
