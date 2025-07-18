@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HYL Ultra - 专业超声波切割解决方案</title>
-    <link rel="stylesheet" href="common/common.css">
+    <title>HYL Ultra - 超声波切割技术专家</title>
+    <link rel="icon" type="image/x-icon" href="image/favicon/favicon.ico">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="common/common.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- 导航栏 -->
@@ -50,11 +53,31 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="our-story/index.html" class="nav-link">Our Story</a>
+                <li class="nav-item dropdown">
+                    <a href="#services" class="nav-link">Services</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-grid">
+                            <a href="services/technical-support.html" class="dropdown-item">
+                                <div class="dropdown-image">
+                                    <div class="service-icon">🔧</div>
+                                </div>
+                                <div class="dropdown-text">
+                                    <span>技术支持</span>
+                                </div>
+                            </a>
+                            <a href="services/warranty.html" class="dropdown-item">
+                                <div class="dropdown-image">
+                                    <div class="service-icon">🛡️</div>
+                                </div>
+                                <div class="dropdown-text">
+                                    <span>质保服务</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a href="#wholesale" class="nav-link">Wholesale</a>
+                    <a href="our-story/index.html" class="nav-link">Our Story</a>
                 </li>
                 <li class="nav-item">
                     <a href="#blog" class="nav-link">Blog</a>
@@ -90,15 +113,15 @@
         </section>
 
         <!-- 产品展示区域 -->
-        <section id="products" class="products-main-section">
+        <section id="products" class="products-main-section tech-industrial">
             <div class="container">
-                <h2 class="section-title">我们的产品</h2>
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">我们的产品</h2>
             </div>
             
             <!-- 超声波厨房刀 -->
             <section class="product-showcase-section product-showcase--media-right" id="kitchen-knife">
                 <div class="product-showcase-layout">
-                    <div class="product-showcase-text">
+                    <div class="product-showcase-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                         <div class="product-text-content">
                             <h3>超声波厨房刀</h3>
                             <p>专为厨房设计的超声波切割刀，让烹饪更加精准高效。采用先进的超声波技术，实现无损切割，保持食材的完整性和新鲜度。</p>
@@ -109,12 +132,12 @@
                                 <div class="feature-item">✓ 人体工程学手柄</div>
                             </div>
                             <div class="product-showcase-buttons">
-                                <button class="btn btn-primary">立即订购</button>
+                                <button class="btn btn-primary" onclick="openModal()">立即订购</button>                                
                                 <button class="btn btn-outline">了解详情</button>
                             </div>
                         </div>
                     </div>
-                    <div class="product-showcase-media">
+                    <div class="product-showcase-media" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
                         <div class="product-media-container kitchen-knife-media">
                             <!-- 预留gif位置：image/kitchen-knife.gif -->
                             <div class="product-placeholder kitchen-knife-bg"></div>
@@ -126,13 +149,13 @@
             <!-- 超声波面包刀 -->
             <section class="product-showcase-section product-showcase--media-left" id="bread-knife">
                 <div class="product-showcase-layout">
-                    <div class="product-showcase-media">
+                    <div class="product-showcase-media" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                         <div class="product-media-container bread-knife-media">
                             <!-- 预留gif位置：image/bread-knife.gif -->
                             <div class="product-placeholder bread-knife-bg"></div>
                         </div>
                     </div>
-                    <div class="product-showcase-text">
+                    <div class="product-showcase-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
                         <div class="product-text-content">
                             <h3>超声波面包刀</h3>
                             <p>专业面包切割解决方案，保持面包完整形状。超声波振动技术确保切割过程中不会压缩面包，保持蓬松口感和完美外观。</p>
@@ -143,7 +166,7 @@
                                 <div class="feature-item">✓ 适用各种面包类型</div>
                             </div>
                             <div class="product-showcase-buttons">
-                                <button class="btn btn-primary">立即订购</button>
+                                <button class="btn btn-primary" onclick="openModal()">立即订购</button>
                                 <button class="btn btn-outline">了解详情</button>
                             </div>
                         </div>
@@ -154,7 +177,7 @@
             <!-- 超声波塑料切割刀 -->
             <section class="product-showcase-section product-showcase--media-right" id="plastic-knife">
                 <div class="product-showcase-layout">
-                    <div class="product-showcase-text">
+                    <div class="product-showcase-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                         <div class="product-text-content">
                             <h3>超声波塑料切割刀</h3>
                             <p>工业级塑料切割工具，适用于各种塑料材料。高频超声波振动实现精密切割，适用于薄膜、管材、板材等多种塑料制品的加工。</p>
@@ -165,12 +188,12 @@
                                 <div class="feature-item">✓ 环保节能运行</div>
                             </div>
                             <div class="product-showcase-buttons">
-                                <button class="btn btn-primary">立即订购</button>
+                                <button class="btn btn-primary" onclick="openModal()">立即订购</button>
                                 <button class="btn btn-outline">了解详情</button>
                             </div>
                         </div>
                     </div>
-                    <div class="product-showcase-media">
+                    <div class="product-showcase-media" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
                         <div class="product-media-container plastic-knife-media">
                             <!-- 预留gif位置：image/plastic-knife.gif -->
                             <div class="product-placeholder plastic-knife-bg"></div>
@@ -181,44 +204,164 @@
         </section>
 
         <!-- Our Story Section -->
-        <section id="our-story" class="story-section">
+        <section id="our-story" class="story-section tech-industrial">
             <div class="container">
-                <div class="story-content">
-                    <div class="story-text">
-                        <h2>我们的故事</h2>
-                        <p>UltraCut 成立于2020年，致力于将超声波切割技术带入日常生活。我们相信精准的切割技术能够改变人们的工作和生活方式。</p>
-                        <p>从厨房到工业应用，我们的产品正在重新定义切割体验的标准。</p>
-                        <a href="our-story/index.html" class="btn btn-primary">了解更多</a>
+                <!-- Section Header -->
+                <div class="story-header" data-aos="fade-up" data-aos-duration="800">
+                    <div class="tech-badge">
+                        <span class="tech-line"></span>
+                        <span class="tech-text">INNOVATION SINCE 2020</span>
+                        <span class="tech-line"></span>
                     </div>
-                    <div class="story-image">
-                        <div class="story-placeholder"></div>
+                    <h2 class="story-title">超声波技术革命</h2>
+                    <p class="story-subtitle">重新定义精密切割的工业标准</p>
+                </div>
+
+                <!-- Main Content -->
+                <div class="story-content">
+                    <div class="story-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="tech-stats-grid">
+                            <div class="tech-stat" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="stat-number">20kHz+</div>
+                                <div class="stat-label">超声波频率</div>
+                            </div>
+                            <div class="tech-stat" data-aos="zoom-in" data-aos-delay="500">
+                                <div class="stat-number">0.01mm</div>
+                                <div class="stat-label">切割精度</div>
+                            </div>
+                            <div class="tech-stat" data-aos="zoom-in" data-aos-delay="600">
+                                <div class="stat-number">99.8%</div>
+                                <div class="stat-label">材料利用率</div>
+                            </div>
+                        </div>
+
+                        <div class="story-timeline">
+                            <div class="timeline-item" data-aos="fade-left" data-aos-delay="700">
+                                <div class="timeline-year">2020</div>
+                                <div class="timeline-content">
+                                    <h4>技术突破</h4>
+                                    <p>首次实现超声波切割技术的民用化应用</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-left" data-aos-delay="800">
+                                <div class="timeline-year">2022</div>
+                                <div class="timeline-content">
+                                    <h4>产品革新</h4>
+                                    <p>推出第一代商用超声波切割设备</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-left" data-aos-delay="900">
+                                <div class="timeline-year">2024</div>
+                                <div class="timeline-content">
+                                    <h4>行业领先</h4>
+                                    <p>成为超声波切割技术的行业标杆</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-features" data-aos="fade-up" data-aos-delay="1000">
+                            <div class="feature-grid">
+                                <div class="tech-feature">
+                                    <div class="feature-icon">⚡</div>
+                                    <span>高效节能</span>
+                                </div>
+                                <div class="tech-feature">
+                                    <div class="feature-icon">🎯</div>
+                                    <span>精密控制</span>
+                                </div>
+                                <div class="tech-feature">
+                                    <div class="feature-icon">🔧</div>
+                                    <span>工业级品质</span>
+                                </div>
+                                <div class="tech-feature">
+                                    <div class="feature-icon">🌱</div>
+                                    <span>环保技术</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-cta" data-aos="fade-up" data-aos-delay="1100">
+                            <a href="our-story/index.html" class="btn btn-primary tech-btn">
+                                <span>深入了解技术</span>
+                                <div class="btn-tech-effect"></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="story-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                        <!-- Industrial Tech Visualization -->
+                        <div class="tech-visual-container">
+                            <div class="tech-grid-bg"></div>
+                            <div class="tech-circuit-lines">
+                                <div class="circuit-line line-1"></div>
+                                <div class="circuit-line line-2"></div>
+                                <div class="circuit-line line-3"></div>
+                                <div class="circuit-line line-4"></div>
+                            </div>
+                            
+                            <!-- 预留主图片位置 -->
+                            <div class="main-visual-placeholder">
+                                <div class="visual-frame">
+                                    <!-- 此处预留给工业化设备/实验室场景图片 -->
+                                    <div class="placeholder-content">
+                                        <div class="placeholder-icon">🏭</div>
+                                        <span>工业设备展示区</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Tech Elements -->
+                            <div class="floating-elements">
+                                <div class="tech-chip chip-1" data-aos="float" data-aos-delay="1200">
+                                    <span>精准</span>
+                                </div>
+                                <div class="tech-chip chip-2" data-aos="float" data-aos-delay="1300">
+                                    <span>高效</span>
+                                </div>
+                                <div class="tech-chip chip-3" data-aos="float" data-aos-delay="1400">
+                                    <span>静音</span>
+                                </div>
+                            </div>
+
+                            <!-- Data Stream Visualization -->
+                            <div class="data-stream">
+                                <div class="stream-line"></div>
+                                <div class="data-points">
+                                    <div class="data-point"></div>
+                                    <div class="data-point"></div>
+                                    <div class="data-point"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology Specs Bar -->
+                <div class="tech-specs-bar" data-aos="fade-up" data-aos-delay="1500">
+                    <div class="spec-item">
+                        <span class="spec-label">频率范围</span>
+                        <span class="spec-value">20-40 kHz</span>
+                    </div>
+                    <div class="spec-divider"></div>
+                    <div class="spec-item">
+                        <span class="spec-label">功率输出</span>
+                        <span class="spec-value">500-2000W</span>
+                    </div>
+                    <div class="spec-divider"></div>
+                    <div class="spec-item">
+                        <span class="spec-label">温控精度</span>
+                        <span class="spec-value">±0.1°C</span>
+                    </div>
+                    <div class="spec-divider"></div>
+                    <div class="spec-item">
+                        <span class="spec-label">自动化等级</span>
+                        <span class="spec-value">Industry 4.0</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Wholesale Section -->
-        <section id="wholesale" class="wholesale-section">
-            <div class="container">
-                <h2 class="section-title">批发合作</h2>
-                <div class="wholesale-content">
-                    <div class="wholesale-info">
-                        <h3>成为我们的合作伙伴</h3>
-                        <p>我们为经销商和批发商提供专业的超声波切割产品和技术支持。</p>
-                        <ul class="wholesale-benefits">
-                            <li>具有竞争力的批发价格</li>
-                            <li>专业的技术支持和培训</li>
-                            <li>市场营销支持</li>
-                            <li>快速发货和物流支持</li>
-                        </ul>
-                        <button class="btn btn-primary">联系我们</button>
-                    </div>
-                    <div class="wholesale-image">
-                        <div class="wholesale-placeholder"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Blog Section -->
         <section id="blog" class="blog-section">
@@ -275,7 +418,6 @@
                 <div class="footer-section">
                     <h4>服务</h4>
                     <ul>
-                        <li><a href="#wholesale">批发合作</a></li>
                         <li><a href="#support">技术支持</a></li>
                         <li><a href="#warranty">质保服务</a></li>
                     </ul>
@@ -284,8 +426,7 @@
                     <h4>公司</h4>
                     <ul>
                         <li><a href="#our-story">关于我们</a></li>
-                        <li><a href="#careers">招贤纳士</a></li>
-                        <li><a href="#contact">联系我们</a></li>
+                        <li><a href="#" onclick="openModal()">联系我们</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -301,6 +442,68 @@
         </div>
     </footer>
 
+    <!-- 联系我们弹窗 -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>联系我们</h2>
+                <div class="modal-animation">
+                    <img src="image/show.gif" alt="超声波切割演示" class="modal-gif">
+                </div>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">姓名 *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">公司名称</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">邮箱 *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">电话</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="product">感兴趣的产品</label>
+                        <select id="product" name="product">
+                            <option value="">请选择产品</option>
+                            <option value="kitchen">超声波厨房刀</option>
+                            <option value="bread">超声波面包刀</option>
+                            <option value="plastic">超声波塑料切割刀</option>
+                            <option value="custom">定制解决方案</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">留言 *</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="请详细描述您的需求..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">发送消息</button>
+                        <button type="button" class="btn btn-secondary" onclick="closeModal()">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
 </body>
 </html> 

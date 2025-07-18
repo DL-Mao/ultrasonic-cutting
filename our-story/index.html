@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Story - HYL Ultra</title>
+    <link rel="icon" type="image/x-icon" href="../image/favicon/favicon.ico">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../common/common.css">
     <link rel="stylesheet" href="story.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h1>HYL Ultra</h1>
+                <h1><a href="../index.html">HYL Ultra</a></h1>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -21,17 +25,70 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a href="../index.html#products" class="nav-link">Products</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-grid">
+                            <a href="../index.html#kitchen-knife" class="dropdown-item">
+                                <div class="dropdown-image">
+                                    <img src="../image/超声厨刀.png" alt="超声波厨房刀">
+                                </div>
+                                <div class="dropdown-text">
+                                    <span>超声波厨房刀</span>
+                                </div>
+                            </a>
+                            <a href="../index.html#bread-knife" class="dropdown-item">
+                                <div class="dropdown-image">
+                                    <img src="../image/超声面包刀.jpg" alt="超声波面包刀">
+                                </div>
+                                <div class="dropdown-text">
+                                    <span>超声波面包刀</span>
+                                </div>
+                            </a>
+                            <a href="../index.html#plastic-knife" class="dropdown-item">
+                                <div class="dropdown-image">
+                                    <img src="../image/超声塑刀.jpg" alt="超声波塑料切割刀">
+                                </div>
+                                <div class="dropdown-text">
+                                    <span>超声波塑料切割刀</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="../index.html#services" class="nav-link">Services</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-grid">
+                            <a href="../services/technical-support.html" class="dropdown-item">
+                                <div class="dropdown-image">
+                                    <div class="service-icon">🔧</div>
+                                </div>
+                                <div class="dropdown-text">
+                                    <span>技术支持</span>
+                                </div>
+                            </a>
+                            <a href="../services/warranty.html" class="dropdown-item">
+                                <div class="dropdown-image">
+                                    <div class="service-icon">🛡️</div>
+                                </div>
+                                <div class="dropdown-text">
+                                    <span>质保服务</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Our Story</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../index.html#wholesale" class="nav-link">Wholesale</a>
+                    <a href="#" class="nav-link active">Our Story</a>
                 </li>
                 <li class="nav-item">
                     <a href="../index.html#blog" class="nav-link">Blog</a>
                 </li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
 
@@ -46,13 +103,51 @@
 
         <section class="story-content">
             <div class="container">
-                <div class="story-grid">
-                    <div class="story-text">
+                <div class="story-layout">
+                    <!-- 左侧文字内容 -->
+                    <div class="story-text-section" data-aos="fade-right">
                         <h2>我们的使命</h2>
                         <p>HYL Ultra致力于将超声波切割技术带入每个需要精确切割的场景。我们相信，通过不断创新和改进，可以为用户提供更好的切割体验。</p>
                     </div>
-                    <div class="story-image">
-                        <img src="../image/show.gif" alt="超声波切割演示">
+                    
+                    <!-- 右侧卡片滑动组件 -->
+                    <div class="mission-slider-container" data-aos="fade-left">
+                        <div class="mission-slider">
+                            <div class="mission-slide active">
+                                <div class="mission-card">
+                                    <div class="card-icon">🚀</div>
+                                    <h3>技术创新</h3>
+                                    <p>持续研发先进的超声波切割技术，为用户提供最精准的切割解决方案。</p>
+                                </div>
+                            </div>
+                            <div class="mission-slide">
+                                <div class="mission-card">
+                                    <div class="card-icon">⭐</div>
+                                    <h3>品质保证</h3>
+                                    <p>严格的质量控制体系，确保每一件产品都达到最高标准。</p>
+                                </div>
+                            </div>
+                            <div class="mission-slide">
+                                <div class="mission-card">
+                                    <div class="card-icon">❤️</div>
+                                    <h3>用户体验</h3>
+                                    <p>以用户需求为中心，不断优化产品设计和用户体验。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 导航按钮 -->
+                        <div class="slider-nav">
+                            <button class="nav-btn prev-btn" onclick="prevSlide()">‹</button>
+                            <button class="nav-btn next-btn" onclick="nextSlide()">›</button>
+                        </div>
+                        
+                        <!-- 指示器 -->
+                        <div class="slider-dots">
+                            <span class="dot active" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,27 +155,27 @@
 
         <section class="story-timeline">
             <div class="container">
-                <h2>发展历程</h2>
+                <h2 data-aos="fade-up">发展历程</h2>
                 <div class="timeline">
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-aos="fade-right">
                         <div class="timeline-content">
                             <h3>2023</h3>
                             <p>公司成立，开始研发超声波切割技术</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-aos="fade-left">
                         <div class="timeline-content">
                             <h3>2024</h3>
                             <p>推出第一代超声波厨房刀具</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-aos="fade-right">
                         <div class="timeline-content">
                             <h3>2025</h3>
                             <p>扩展产品线，推出面包切割解决方案</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-aos="fade-left">
                         <div class="timeline-content">
                             <h3>2026</h3>
                             <p>进军工业领域，开发塑料切割设备</p>
@@ -92,5 +187,60 @@
     </main>
 
     <script src="../script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+
+        // 滑动组件功能
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.mission-slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            // 隐藏所有滑块
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // 显示当前滑块
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            showSlide(currentSlideIndex);
+        }
+
+        function prevSlide() {
+            currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlideIndex);
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index - 1;
+            showSlide(currentSlideIndex);
+        }
+
+        // 自动播放（可选）
+        setInterval(() => {
+            nextSlide();
+        }, 5000);
+
+        // 键盘导航
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+    </script>
 </body>
 </html> 

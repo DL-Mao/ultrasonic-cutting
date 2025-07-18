@@ -553,4 +553,75 @@ function initProductShowcaseAnimations() {
         }
     `;
     document.head.appendChild(style);
-} 
+}
+
+// 弹窗功能
+function openModal() {
+    const modal = document.getElementById('contactModal');
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // 防止背景滚动
+}
+
+function closeModal() {
+    const modal = document.getElementById('contactModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // 恢复滚动
+    
+    // 清空表单
+    const form = document.getElementById('contactForm');
+    form.reset();
+}
+
+// 点击背景关闭弹窗
+window.onclick = function(event) {
+    const modal = document.getElementById('contactModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+
+// 按ESC键关闭弹窗
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const modal = document.getElementById('contactModal');
+        if (modal.style.display === 'block') {
+            closeModal();
+        }
+    }
+});
+
+// 关闭按钮事件
+document.addEventListener('DOMContentLoaded', function() {
+    const closeBtn = document.querySelector('.close');
+    if (closeBtn) {
+        closeBtn.onclick = closeModal;
+    }
+    
+    // 表单提交处理
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 获取表单数据
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                company: formData.get('company'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                product: formData.get('product'),
+                message: formData.get('message')
+            };
+            
+            // 模拟表单提交（实际项目中应该发送到服务器）
+            console.log('表单数据:', data);
+            
+            // 显示成功消息
+            alert('感谢您的咨询！我们会尽快联系您。');
+            
+            // 关闭弹窗
+            closeModal();
+        });
+    }
+}); 

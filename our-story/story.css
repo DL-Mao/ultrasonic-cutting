@@ -1,9 +1,18 @@
+/* 容器样式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
 /* Story Hero Section */
 .story-hero {
-    padding: 120px 0 60px;
+    padding: 60px 0 20px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-align: center;
+    width: 100%;
 }
 
 .story-hero h1 {
@@ -20,37 +29,245 @@
 /* Story Content Section */
 .story-content {
     padding: 80px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 30vh;
 }
 
-.story-grid {
+.story-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.story-text h2 {
+.story-text-section {
+    text-align: center;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.story-text-section h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: #333;
 }
 
-.story-text p {
-    font-size: 1.1rem;
+.story-text-section p {
+    font-size: 1.2rem;
     line-height: 1.8;
     color: #666;
+    margin-bottom: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.story-image img {
+/* 卡片滑动组件样式 */
+.mission-slider-container {
+    position: relative;
+    max-width: 450px;  /* 增加容器宽度 */
     width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.mission-slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.mission-slide {
+    display: none;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.mission-slide.active {
+    display: block;
+}
+
+.mission-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 50px 40px;  /* 增加内边距 */
+    text-align: center;
+    min-height: 320px;   /* 增加卡片高度 */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.card-icon {
+    font-size: 3.5rem;   /* 稍微增加图标大小 */
+    margin-bottom: 25px;
+    display: block;
+}
+
+.mission-card h3 {
+    font-size: 1.8rem;   /* 增加标题字体大小 */
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.mission-card p {
+    font-size: 1.1rem;   /* 增加正文字体大小 */
+    line-height: 1.7;
+    opacity: 0.9;
+    margin: 0;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 导航按钮 */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    pointer-events: none;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+/* 指示器 */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #667eea;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: #764ba2;
+}
+
+/* 滑动动画 */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 移除旧样式（保留注释状态） */
+/*
+.story-text-section {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.story-text-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.story-text-section > p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mission-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.mission-point {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-point:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.mission-point h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+.mission-point p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+*/
 
 /* Timeline Section */
 .story-timeline {
     padding: 80px 0;
     background: #f8f9fa;
+    width: 100%;
 }
 
 .story-timeline h2 {
@@ -136,6 +353,14 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .story-hero {
+        padding: 60px 0 30px;
+    }
+
     .story-hero h1 {
         font-size: 2.5rem;
     }
@@ -144,13 +369,76 @@
         font-size: 1.2rem;
     }
 
-    .story-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    .story-content {
+        min-height: 50vh;
+        padding: 60px 0;
     }
 
-    .story-text h2 {
+    .story-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        justify-items: center;
+    }
+
+    .story-text-section {
+        padding: 0 15px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .story-text-section h2 {
         font-size: 2rem;
+    }
+
+    .story-text-section p {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+        max-width: 90%;
+    }
+
+    .mission-slider-container {
+        max-width: 380px;    /* 平板端调整宽度 */
+        width: 100%;
+    }
+
+    .mission-card {
+        padding: 40px 30px;  /* 平板端调整内边距 */
+        min-height: 280px;   /* 平板端调整高度 */
+    }
+
+    .card-icon {
+        font-size: 3rem;     /* 平板端调整图标大小 */
+        margin-bottom: 20px;
+    }
+
+    .mission-card h3 {
+        font-size: 1.6rem;   /* 平板端调整标题大小 */
+        margin-bottom: 20px;
+    }
+
+    .mission-card p {
+        font-size: 1rem;     /* 平板端调整正文大小 */
+        max-width: 300px;
+    }
+
+    .slider-nav {
+        padding: 0 5px;
+    }
+
+    .nav-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+    }
+
+    .slider-dots {
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
     }
 
     .timeline::before {
@@ -181,6 +469,14 @@
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .story-hero {
+        padding: 40px 0 20px;
+    }
+
     .story-hero h1 {
         font-size: 2rem;
     }
@@ -189,8 +485,72 @@
         font-size: 1rem;
     }
 
-    .story-text h2 {
+    .story-content {
+        min-height: 40vh;
+        padding: 40px 0;
+    }
+
+    .story-layout {
+        gap: 30px;
+    }
+
+    .story-text-section {
+        padding: 0 10px;
+    }
+
+    .story-text-section h2 {
         font-size: 1.8rem;
+    }
+
+    .story-text-section p {
+        font-size: 1rem;
+        max-width: 95%;
+    }
+
+    .mission-slider-container {
+        max-width: 320px;    /* 移动端宽度稍微增加 */
+    }
+
+    .mission-card {
+        padding: 30px 20px;  /* 移动端内边距调整 */
+        min-height: 240px;   /* 移动端高度调整 */
+    }
+
+    .card-icon {
+        font-size: 2.2rem;   /* 移动端图标大小调整 */
+        margin-bottom: 12px;
+    }
+
+    .mission-card h3 {
+        font-size: 1.3rem;   /* 移动端标题大小调整 */
+        margin-bottom: 12px;
+    }
+
+    .mission-card p {
+        font-size: 0.9rem;   /* 移动端正文大小调整 */
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .slider-nav {
+        padding: 0 3px;
+    }
+
+    .nav-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1.1rem;
+    }
+
+    .slider-dots {
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
     }
 
     .timeline-content h3 {

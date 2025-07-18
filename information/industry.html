@@ -4,34 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>工业切割的新标准 - HYL Ultra</title>
+    <link rel="icon" type="image/x-icon" href="../image/favicon/favicon.ico">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../common/common.css">
     <link rel="stylesheet" href="information.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h1>HYL Ultra</h1>
+                <h1><a href="../index.html">HYL Ultra</a></h1>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="../index.html" class="nav-link">首页</a>
+                    <a href="../index.html#home" class="nav-link">首页</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="../index.html#products" class="nav-link">Products</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-grid">
+                            <a href="../index.html#kitchen-knife" class="dropdown-item">
+                                <div class="dropdown-image">
+                                    <img src="../image/超声厨刀.png" alt="超声波厨房刀">
+                                </div>
+                                <div class="dropdown-text">
+                                    <span>超声波厨房刀</span>
+                                </div>
+                            </a>
+                            <a href="../index.html#bread-knife" class="dropdown-item">
+                                <div class="dropdown-image">
+                                    <img src="../image/超声面包刀.jpg" alt="超声波面包刀">
+                                </div>
+                                <div class="dropdown-text">
+                                    <span>超声波面包刀</span>
+                                </div>
+                            </a>
+                            <a href="../index.html#plastic-knife" class="dropdown-item">
+                                <div class="dropdown-image">
+                                    <img src="../image/超声塑刀.jpg" alt="超声波塑料切割刀">
+                                </div>
+                                <div class="dropdown-text">
+                                    <span>超声波塑料切割刀</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="../index.html#services" class="nav-link">Services</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-grid">
+                            <a href="../services/technical-support.html" class="dropdown-item">
+                                <div class="dropdown-image">
+                                    <div class="service-icon">🔧</div>
+                                </div>
+                                <div class="dropdown-text">
+                                    <span>技术支持</span>
+                                </div>
+                            </a>
+                            <a href="../services/warranty.html" class="dropdown-item">
+                                <div class="dropdown-image">
+                                    <div class="service-icon">🛡️</div>
+                                </div>
+                                <div class="dropdown-text">
+                                    <span>质保服务</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a href="../our-story/index.html" class="nav-link">Our Story</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../index.html#wholesale" class="nav-link">Wholesale</a>
-                </li>
-                <li class="nav-item">
                     <a href="../index.html#blog" class="nav-link">Blog</a>
                 </li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
 
@@ -91,5 +148,15 @@
     </main>
 
     <script src="../script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
 </body>
 </html> 
